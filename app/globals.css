@@ -1,0 +1,145 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #0c0a16;
+  font-family: var(--font-inter), sans-serif;
+}
+
+a {
+  color: #c6ff3d;
+  text-decoration: none;
+}
+a:hover {
+  color: #d7ff6e;
+}
+
+input::placeholder {
+  color: #6b6577;
+}
+
+@keyframes pf-tickIn {
+  from {
+    opacity: 0;
+    transform: translateY(-45%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes pf-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.35);
+    opacity: 0.75;
+  }
+}
+@keyframes pf-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(198, 255, 61, 0);
+  }
+  50% {
+    box-shadow: 0 0 14px 2px rgba(198, 255, 61, 0.55);
+  }
+}
+@keyframes pf-burst {
+  0% {
+    transform: translate(0, 0) scale(0.4);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--bx), var(--by)) scale(1);
+    opacity: 0;
+  }
+}
+@keyframes pf-rise {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* hover states from the design's style-hover attributes */
+.pf-social {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #b7b2c4;
+  transition: border-color 0.18s, color 0.18s;
+}
+.pf-social:hover {
+  border-color: rgba(198, 255, 61, 0.5);
+  color: #c6ff3d;
+}
+
+.pf-footer-link {
+  color: #8c8798;
+}
+.pf-footer-link:hover {
+  color: #c6ff3d;
+}
+
+.pf-input {
+  flex: 1 1 240px;
+  min-width: 0;
+  height: 54px;
+  padding: 0 18px;
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  font-size: 16px;
+  font-family: var(--font-inter), sans-serif;
+  border-radius: 14px;
+  outline: none;
+  border: 1.5px solid rgba(255, 255, 255, 0.14);
+  transition: border-color 0.18s;
+}
+.pf-input:hover {
+  border-color: rgba(255, 255, 255, 0.28);
+}
+.pf-input[data-error="true"],
+.pf-input[data-error="true"]:hover {
+  border-color: #ff6b5c;
+}
+
+.pf-cta {
+  height: 54px;
+  padding: 0 26px;
+  flex: 0 0 auto;
+  cursor: pointer;
+  background: #c6ff3d;
+  color: #12101c;
+  border: none;
+  border-radius: 14px;
+  font-family: var(--font-sora), sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: -0.01em;
+  transition: transform 0.15s, box-shadow 0.2s;
+  white-space: nowrap;
+}
+.pf-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px -8px rgba(198, 255, 61, 0.6);
+}
+.pf-cta:disabled {
+  cursor: default;
+  transform: none;
+  box-shadow: none;
+  opacity: 0.7;
+}
