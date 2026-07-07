@@ -28,6 +28,17 @@ export const metadata: Metadata = {
   title: "Plugfolio — Your content is about to become shoppable",
   description:
     "Plugfolio turns your reels, videos, and posts into a shoppable storefront — one link in your bio that turns content into product clicks, affiliate revenue, and brand deals. Get early access.",
+  applicationName: "Plugfolio",
+  keywords: [
+    "link in bio",
+    "shoppable content",
+    "creator storefront",
+    "affiliate revenue",
+    "brand deals",
+    "creator economy",
+    "shoppable reels",
+  ],
+  category: "technology",
   robots: { index: true, follow: true },
   alternates: { canonical: "https://plugfolio.com/" },
   openGraph: {
@@ -52,6 +63,38 @@ export const viewport: Viewport = {
   themeColor: "#0C0A16",
 };
 
+// AEO/SEO structured data — helps search engines and answer engines
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://plugfolio.com/#organization",
+      name: "Plugfolio",
+      url: "https://plugfolio.com/",
+      logo: "https://plugfolio.com/icon.png",
+      description:
+        "Plugfolio turns your reels, videos, and posts into a shoppable storefront — one link in your bio that turns content into product clicks, affiliate revenue, and brand deals.",
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://plugfolio.com/#website",
+      name: "Plugfolio",
+      url: "https://plugfolio.com/",
+      publisher: { "@id": "https://plugfolio.com/#organization" },
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://plugfolio.com/#webpage",
+      url: "https://plugfolio.com/",
+      name: "Plugfolio — Your content is about to become shoppable",
+      isPartOf: { "@id": "https://plugfolio.com/#website" },
+      description:
+        "One link in your bio that turns your content into product clicks, affiliate revenue, and brand deals. Get early access before launch.",
+    },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
@@ -60,6 +103,10 @@ export default function RootLayout({
       <body
         className={`${sora.variable} ${inter.variable} ${spaceMono.variable}`}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         {children}
       </body>
     </html>

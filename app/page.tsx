@@ -357,13 +357,7 @@ export default function Home() {
           >
             Launching in
           </div>
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit,minmax(118px,1fr))",
-              gap: "14px",
-            }}
-          >
+          <div className="pf-grid">
             {cards.map(({ label, value }) => (
               <div key={label} style={cardStyle}>
                 <div style={cardTopBar} />

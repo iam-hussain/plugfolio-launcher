@@ -71,6 +71,18 @@ input::placeholder {
   }
 }
 
+/* countdown grid — 4-up desktop, 2x2 mobile (never a 3+1 orphan) */
+.pf-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+@media (max-width: 620px) {
+  .pf-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 /* hover states from the design's style-hover attributes */
 .pf-social {
   width: 38px;
