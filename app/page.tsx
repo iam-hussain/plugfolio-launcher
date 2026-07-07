@@ -2,7 +2,7 @@
 
 import { useEffect, useState, type CSSProperties, type FormEvent } from "react";
 
-const LAUNCH_DATE = "2026-08-21T09:00:00";
+const LAUNCH_DATE = "2026-10-28T09:00:00";
 const CTA_LABEL = "Get early access";
 
 function PlugMark({ body, prong }: { body: string; prong: string }) {
@@ -124,7 +124,9 @@ export default function Home() {
   const [now, setNow] = useState<number | null>(null);
   const [email, setEmail] = useState("");
   const [formState, setFormState] = useState<FormState>("default");
-  const [errorMsg, setErrorMsg] = useState("Please enter a valid email address.");
+  const [errorMsg, setErrorMsg] = useState(
+    "Please enter a valid email address.",
+  );
 
   useEffect(() => {
     setNow(Date.now());
